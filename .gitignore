@@ -1,16 +1,13 @@
-# Node.js dependencies
+# Node modules for frontend
 node_modules/
-
-# Build output
 dist/
-
-# Local environment variables
 .env
-.env.local
 
-# System files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
+# Python dependencies for backend
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.idea/
+.vscode/
