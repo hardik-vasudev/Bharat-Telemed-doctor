@@ -27,7 +27,7 @@ app = FastAPI()
 # ✅ Improved CORS for Security
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://your-vercel-url.vercel.app"],  # Change to your actual Vercel URL
+    allow_origins=["https://bharat-telemed-doctor.vercel.app"],  # Change to your actual Vercel URL
     allow_credentials=True,
     allow_methods=["GET", "POST"],
     allow_headers=["Authorization", "Content-Type"],

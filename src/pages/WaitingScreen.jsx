@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+// API Base URL Setup (Switches between Render URL and Localhost)
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8002";
 
 const DoctorWaitingScreen = () => {
   const [doctorId, setDoctorId] = useState('');
@@ -15,9 +17,11 @@ const DoctorWaitingScreen = () => {
     try {
       setLoading(true);
       console.log('Fetching doctor data for ID:', doctorId);
+
       const response = await axios.get(
-        `http://127.0.0.1:8002/api/doctor/waiting-screen?doctorId=${doctorId}`
+        `${API_BASE_URL}/api/doctor/waiting-screen?doctorId=${doctorId}`
       );
+
       console.log('Doctor data received:', response.data);
       setDoctorData(response.data.doctor);
       setJwt(response.data.jwt);
